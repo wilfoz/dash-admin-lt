@@ -1,0 +1,68 @@
+<table class="table-rpd" cellspacing="0" border="0">
+  <thead>
+    <tr>
+      <td rowspan=4><p>Item</p></td>
+      <td colspan=1 rowspan=4><p>Atividade</p></td>
+      <td rowspan=4><p>Unid.</p></td>
+      <td colspan=2 rowspan=2><p>Data</p></td>
+      <td colspan=5><p>Quantidades</p></td>
+      <td rowspan=4><p>À Executar</p></td>
+      <td colspan=2 rowspan=2><p>Atividades executadas em:</p></td>
+      <td colspan=2 rowspan=2><p>Atividades programadas para:</p></td>
+      <td colspan=1 rowspan=4><p>Responsável</p></td>
+    </tr>
+    <tr>
+      <td rowspan=3><p>Previsto</p></td>
+      <td colspan=3><p>Executada</p></td>
+      <td rowspan=3><p>% Acum.</p></td>
+    </tr>
+    <tr>
+      <td rowspan=2><p>Início</p></td>
+      <td rowspan=2><p>Término</p></td>
+      <td rowspan=2><p>No Dia</p></td>
+      <td colspan=2><p>Acumulado</p></td>
+      <td rowspan=2><p>28-jun-24</p></td>
+      <td rowspan=2><p>Friday</p></td>
+      <td rowspan=2><p>29-jun-24</p></td>
+      <td rowspan=2><p>Saturday</p></td>
+    </tr>
+
+    <tr>
+      <td><p>Ant.</p></td>
+      <td><p>Acum.</p></td>
+    </tr>
+  </thead>
+	<tbody>
+    @for(data of stages; track data.code) {
+
+      <tr class="stage">
+        <td><p>{{data.code}}</p></td>
+        <td colspan=16><p>{{data.stage}}</p></td>
+      </tr>
+
+      @for(production of productions; track production.item) {
+
+        @if(production.stage.name === data.stage) {
+          <tr>
+            <td><p>{{production.item}}</p></td>
+            <td><p>{{production.activity}}</p></td>
+            <td><p>{{production.unit}}</p></td>
+            <td><p>{{production.start}}</p></td>
+            <td><p>{{production.end}}</p></td>
+            <td><p>{{production.foreseen}}</p></td>
+            <td><p>{{production.in_day}}</p></td>
+            <td><p>{{production.previous}}</p></td>
+            <td><p>{{production.accumulated}}</p></td>
+            <td><p>{{production.percent_accumulated}}</p></td>
+            <td><p>{{production.to_execute}}</p></td>
+            <td colspan="2"><p>{{production.executed}}</p></td>
+            <td colspan="2"><p>{{production.planned}}</p></td>
+            <td><p>Felipe</p></td>
+          </tr>
+        }
+      }
+    }
+
+  </tbody>
+
+</table>

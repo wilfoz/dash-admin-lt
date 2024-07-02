@@ -1,0 +1,26 @@
+
+.table-rpd {
+  width: 100%;
+  border: 1px solid #1d1b1b;
+
+  thead {
+    background-color: #D9D9D9;
+
+    td {
+      text-align: center;
+      border: .5px solid #686767
+    }
+  }
+
+  tbody {
+    td {
+      text-align: center;
+      border: .5px solid #686767
+    }
+
+    .stage {
+      background: #686767;
+    }
+  }
+
+}
